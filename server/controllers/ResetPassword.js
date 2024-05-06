@@ -22,7 +22,7 @@ exports.resetPasswordToken = async (req, res) => {
         },
             { new: true });
         //create url
-        const url = `http://localhost:3000/update-password/${token}`
+        const url = `https://study-notion-fd.vercel.app/update-password/${token}`
         //send mail containing the url
         const mailResponse = await mailSender(email, "Password reset Link", `You can reset your password here: ${url}`)
         return res.json({
